@@ -1,10 +1,11 @@
+// Імпорт
 import React, { useState } from 'react';
 import Statistics from './feedback-component/FeedbackStatistics';
 import FeedbackOptions from './feedback-component/FeedbackOptions';
 import Section from './feedback-component/FeedbackSection';
 import Notification from './feedback-component/FeedbackNotification';
 import { Container, CssBaseline, Typography } from '@mui/material';
-
+// Основна функція застосунку
 const App = () => {
   const initialFeedbackState = {
     good: 0,
@@ -57,5 +58,5 @@ const App = () => {
     </Container>
   );
 };
-
+// Експорт
 export default App;
