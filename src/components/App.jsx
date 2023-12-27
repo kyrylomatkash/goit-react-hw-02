@@ -5,25 +5,29 @@ import FeedbackOptions from './feedback-component/FeedbackOptions';
 import Section from './feedback-component/FeedbackSection';
 import Notification from './feedback-component/FeedbackNotification';
 import { Container, CssBaseline, Typography } from '@mui/material';
+
 // Основна функція застосунку
 const App = () => {
-  const initialFeedbackState = {
+  const state = {
     good: 0,
     neutral: 0,
     bad: 0,
   };
 
-  const [state, setState] = useState(initialFeedbackState);
+  const [feedbackState, setFeedbackState] = useState(state);
 
   const handleFeedback = option => {
-    setState(prevState => ({ ...prevState, [option]: prevState[option] + 1 }));
+    setFeedbackState(prevFeedbackState => ({
+      ...prevFeedbackState,
+      [option]: prevFeedbackState[option] + 1,
+    }));
   };
 
   const handleClearStatistics = () => {
-    setState(initialFeedbackState);
+    setFeedbackState(state);
   };
 
-  const { good, neutral, bad } = state;
+  const { good, neutral, bad } = feedbackState;
   const total = good + neutral + bad;
 
   return (
@@ -58,5 +62,6 @@ const App = () => {
     </Container>
   );
 };
+
 // Експорт
 export default App;
