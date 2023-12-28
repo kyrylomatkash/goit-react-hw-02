@@ -8,14 +8,11 @@ import { Container, CssBaseline, Typography } from '@mui/material';
 
 // Основний клас застосунку
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      good: 0,
-      neutral: 0,
-      bad: 0,
-    };
-  }
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  };
 
   handleFeedback = option => {
     this.setState(prevState => ({
