@@ -1,34 +1,20 @@
-// Імпорт
 import { ButtonGroup, Button } from '@mui/material';
 import { styled } from '@mui/system';
-// Стилізовані компоненти
-const StyledButtonGroup = styled(ButtonGroup)({
+
+export const StyledButtonGroup = styled(ButtonGroup)({
   margin: '20px',
   display: 'flex',
   justifyContent: 'center',
 });
 
-const StyledButton = styled(Button)(({ feedbackType }) => ({
+export const StyledButton = styled(Button)(({ feedbackType }) => ({
   backgroundColor: getButtonColor(feedbackType),
   color: '#fff',
   '&:hover': {
     backgroundColor: getHoverColor(feedbackType),
   },
 }));
-// Функція фідбеку для кнопок
-const FeedbackOptions = ({ options, onLeaveFeedback }) => (
-  <StyledButtonGroup>
-    {options.map(option => (
-      <StyledButton
-        key={option}
-        onClick={() => onLeaveFeedback(option)}
-        feedbackType={option}
-      >
-        {option}
-      </StyledButton>
-    ))}
-  </StyledButtonGroup>
-);
+
 // Switch кольорів кнопок
 const getButtonColor = feedbackType => {
   switch (feedbackType) {
@@ -42,6 +28,7 @@ const getButtonColor = feedbackType => {
       return '#2196f3';
   }
 };
+
 // Switch ховеру кнопок
 const getHoverColor = feedbackType => {
   switch (feedbackType) {
@@ -55,5 +42,3 @@ const getHoverColor = feedbackType => {
       return '#1565c0';
   }
 };
-// Експорт
-export default FeedbackOptions;

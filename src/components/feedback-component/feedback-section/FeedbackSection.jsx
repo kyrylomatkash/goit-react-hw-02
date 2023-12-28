@@ -1,3 +1,4 @@
+// Імпорт
 import { Typography } from '@mui/material';
 const Section = ({ title, children }) => (
   <div>
@@ -7,5 +8,5 @@ const Section = ({ title, children }) => (
     {children}
   </div>
 );
-
+// Експорт
 export default Section;
