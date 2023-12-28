@@ -1,3 +1,4 @@
+// Імпорт
 import { Typography } from '@mui/material';
 
 const Notification = ({ message }) => (
@@ -5,5 +6,5 @@ const Notification = ({ message }) => (
     {message}
   </Typography>
 );
-
+// Експорт
 export default Notification;

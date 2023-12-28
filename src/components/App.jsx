@@ -1,4 +1,4 @@
-// Імпорт
+// Імпорт компонентів
 import React, { Component } from 'react';
 import Statistics from './feedback-component/feedback-statistic/FeedbackStatistics';
 import FeedbackOptions from './feedback-component/feedback-options/FeedbackOptions';
@@ -6,7 +6,7 @@ import Section from './feedback-component/feedback-section/FeedbackSection';
 import Notification from './feedback-component/feedback-notification/FeedbackNotification';
 import { Container, CssBaseline, Typography } from '@mui/material';
 
-// Основна функція (клас) застосунку
+// Основний клас застосунку
 class App extends Component {
   constructor() {
     super();
