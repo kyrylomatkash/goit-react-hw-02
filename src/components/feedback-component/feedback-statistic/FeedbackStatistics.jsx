@@ -13,14 +13,12 @@ import {
   StatisticItem,
   ClearButton,
 } from './feedbackstatisticsstyles';
-// Основний класс компоненту
+
+// Основний клас компоненту
 class FeedbackStatistics extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isModalOpen: false,
-    };
-  }
+  state = {
+    isModalOpen: false,
+  };
 
   handleOpenModal = () => {
     this.setState({ isModalOpen: true });
@@ -34,6 +32,7 @@ class FeedbackStatistics extends Component {
     this.props.onClearStatistics();
     this.handleCloseModal();
   };
+
   // Рендер
   render() {
     const { good, neutral, bad, total, positivePercentage } = this.props;
@@ -53,6 +52,7 @@ class FeedbackStatistics extends Component {
           variant="contained"
           color="secondary"
           onClick={this.handleOpenModal}
+          disabled={total === 0}
         >
           Clear Statistics
         </ClearButton>
@@ -74,5 +74,6 @@ class FeedbackStatistics extends Component {
     );
   }
 }
+
 // Експорт
 export default FeedbackStatistics;
